@@ -72,62 +72,60 @@
   --social-shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.24);
   --social-ink: var(--ink);
 }
-body.template-personal-brand-workspace-paper {
+body.template-personal-brand-docs-sky {
 
   color-scheme: light;
-  --accent: #5645d4;
-  --action-bg: transparent;
-  --action-border: transparent;
-  --ambient: linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px), linear-gradient(180deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
-  --avatar-size: 104px;
-  --bio-ink: #4f4a45;
-  --canvas: #fafaf9;
-  --card-bg: #ffffff;
-  --card-border: #e2ded8;
-  --card-shadow: rgba(31, 31, 31, 0.08) 0 20px 54px;
-  --cta-bg: #5645d4;
-  --cta-bg-hover: #6656e3;
-  --cta-border: #5645d4;
+  --accent: #00b48a;
+  --action-bg: #ffffff;
+  --action-border: #e5e5e5;
+  --ambient: radial-gradient(circle at 76% 0%, rgba(135, 168, 200, 0.28), transparent 34%), linear-gradient(135deg, #f5e9d8 0%, #ffffff 45%, #edf8f6 100%);
+  --avatar-size: 102px;
+  --bio-ink: #3a3a3c;
+  --canvas: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: #e5e5e5;
+  --card-shadow: rgba(10, 10, 10, 0.08) 0 24px 62px;
+  --cta-bg: #0a0a0a;
+  --cta-bg-hover: #1c1c1e;
+  --cta-border: #0a0a0a;
   --cta-ink: #ffffff;
   --headline-size: 60px;
   --headline-size-mobile: 38px;
-  --headline-weight: 680;
-  --ink: #1f1f1f;
+  --headline-weight: 600;
+  --ink: #0a0a0a;
   --link-bg: #ffffff;
-  --link-bg-hover: #f6f5f4;
-  --link-border: #e2ded8;
-  --link-gap: 8px;
-  --link-icon-bg: #f6f5f4;
-  --link-icon-bg-hover: #5645d4;
-  --link-icon-ink-hover: #ffffff;
-  --link-meta: #78736d;
-  --link-shadow-hover: 0 12px 30px rgba(86, 69, 212, 0.12);
-  --meta-bg: #f6f5f4;
-  --meta-border: #e2ded8;
-  --muted: #78736d;
+  --link-bg-hover: #f7f7f7;
+  --link-border: #e5e5e5;
+  --link-gap: 9px;
+  --link-icon-bg: #e8fbf6;
+  --link-icon-bg-hover: #00b48a;
+  --link-icon-ink-hover: #0a0a0a;
+  --link-meta: #5a5a5c;
+  --link-shadow-hover: 0 14px 32px rgba(0, 180, 138, 0.14);
+  --meta-bg: #e8fbf6;
+  --meta-border: #b8eee2;
+  --muted: #5a5a5c;
   --panel-bg: #ffffff;
-  --panel-border: #e2ded8;
-  --panel-padding: 0;
-  --profile-align: start;
+  --panel-border: #e5e5e5;
+  --panel-padding: 16px;
   --profile-bg: transparent;
   --profile-border: transparent;
-  --profile-padding: 0;
-  --profile-text-align: left;
-  --radius-action: 10px;
-  --radius-avatar: 12px;
-  --radius-card: 10px;
-  --radius-panel: 16px;
-  --section-gap: 16px;
-  --shell-padding-block: 42px 34px;
-  --shell-width: 860px;
-  --surface: #ffffff;
+  --profile-padding: 8px 0 8px;
+  --radius-action: 999px;
+  --radius-avatar: 16px;
+  --radius-card: 12px;
+  --radius-panel: 22px;
+  --section-gap: 14px;
+  --shell-padding-block: 48px 34px;
+  --shell-width: 780px;
+  --surface: #f7f7f7;
   --social-bg: #ffffff;
-  --social-border: #e2ded8;
-  --social-hover-bg: #5645d4;
-  --social-hover-border: #5645d4;
-  --social-hover-ink: #ffffff;
-  --social-ink: #1f1f1f;
-  --surface-2: #f6f5f4;
+  --social-border: #e5e5e5;
+  --social-hover-bg: #00b48a;
+  --social-hover-border: #00b48a;
+  --social-hover-ink: #0a0a0a;
+  --social-ink: #0a0a0a;
+  --surface-2: #edf8f6;
   --cta-ink-hover: var(--cta-ink);
   --cta-icon-bg: color-mix(in srgb, var(--cta-ink), transparent 86%);
   --cta-icon-border: color-mix(in srgb, var(--cta-ink), transparent 72%);
@@ -309,12 +307,19 @@ footer span,
 }
 h1 {
   font-family: var(--display-font);
-  font-size: var(--headline-size);
+  font-size: min(var(--headline-size), 44px);
   font-weight: var(--headline-weight);
   letter-spacing: 0;
-  line-height: 1.02;
+  line-height: 1.08;
   margin: 0;
   overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+h1.headline-medium {
+  font-size: min(var(--headline-size), 40px);
+}
+h1.headline-long {
+  font-size: min(var(--headline-size), 34px);
 }
 .bio {
   color: var(--bio-ink, #d0d6e0);
@@ -842,7 +847,14 @@ footer a:hover {
     width: min(calc(100% - 24px), var(--shell-width));
   }
   h1 {
-    font-size: var(--headline-size-mobile);
+    font-size: min(var(--headline-size-mobile), 30px);
+    line-height: 1.1;
+  }
+  h1.headline-medium {
+    font-size: min(var(--headline-size-mobile), 28px);
+  }
+  h1.headline-long {
+    font-size: min(var(--headline-size-mobile), 25px);
   }
   .profile-card {
     padding: max(18px, calc(var(--card-padding) - 8px));
